@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soundboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background: #f2f2f2;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Soundboard 🎵</h1>
+
+  <button onclick="playSound('sound1')">Sound 1</button>
+  <button onclick="playSound('sound2')">Sound 2</button>
+  <button onclick="playSound('sound3')">Sound 3</button>
+  <button onclick="playSound('letMeKnow')">Let Me Know</button>
+
+  <audio id="sound1" src="sounds/sound1.mp3"></audio>
+  <audio id="sound2" src="sounds/sound2.mp3"></audio>
+  <audio id="sound3" src="sounds/sound3.mp3"></audio>
+  <audio id="letMeKnow" src="sounds/let-me-know.mp3"></audio>
+
+  <script>
+    function playSound(id) {
+      const sound = document.getElementById(id);
+      sound.currentTime = 0; // Rewind
+      sound.play();
+    }
+  </script>
+</body>
+</html>
